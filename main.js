@@ -8,7 +8,7 @@ L.circle(origins[4],3000000),
 L.circle(origins[5],2000000)]
 mymap.on('load',function(){
     console.log('load')
-    mymap.flyTo(generatePoint(),10,{duration:60}) //On load, fly to random point within a circle
+    mymap.flyTo(generatePoint(),10,{duration:180}) //On load, fly to random point within a circle
 }).setView(generatePoint(), 13); //Init the map
 mymap._handlers.forEach(function(handler) {
     handler.disable(); //Disable mouse input for use as a desktop background
@@ -26,7 +26,7 @@ function random(min, max) { //Random float between max and min including both.
 }
 mymap.on('zoomend', function() { //Event for when a map is done zooming. This makes it always on the move
     var newpoint = generatePoint(); //Create a new point
-    mymap.flyTo(newpoint,10,{duration:60})
+    mymap.flyTo(newpoint,10,{duration:180})
 });
 function generatePoint(){ //Actual difficult code! Generate a random point within a random circle
     var place=circles[Math.floor(random(0,5))] //Get a random continent circle
