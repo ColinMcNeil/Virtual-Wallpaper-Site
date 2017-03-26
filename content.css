@@ -7,3 +7,13 @@ body {
 .mymap{
     height:100%;
 }
+.mapbox-logo{
+    display: none !important;
+}
+.leaflet-control-attribution{
+    display: none !important;
+}
+.leaflet-control-zoom{
+    display: none !important;
+  
+}

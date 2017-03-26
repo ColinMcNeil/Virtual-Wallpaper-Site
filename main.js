@@ -19,7 +19,9 @@ L.tileLayer('https://api.mapbox.com/styles/v1/breakingbaddies/cizoffqx4003m2rqkn
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     maxZoom: 18,
     zoomControl:false,
-    dragging:false
+    dragging:false,
+    attributionControl: false,
+    zoomControl: false
 }).addTo(mymap);
 function random(min, max) { //Random float between max and min including both.
     return Math.random() * (max - min) + min;
@@ -46,3 +48,10 @@ function generatePoint(){ //Actual difficult code! Generate a random point withi
     ln  = ln_origin  + (ln_METERS / 6378000) * (180 / Math.PI) / Math.cos(lat_origin*Math.PI/180);
     return [lat,ln];
 }
+$( document ).keypress(function(event) {
+  if(event.key.toLowerCase()=='r'){
+    
+    var newpoint = generatePoint(); //Create a new point
+    mymap.flyTo(newpoint,10,{duration:1})
+  }
+});
