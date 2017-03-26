@@ -15,5 +15,10 @@ body {
 }
 .leaflet-control-zoom{
     display: none !important;
-  
+}
+.leaflet-container { 
+    background: rgb(41, 41, 41) !important;
+}
+img {
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.05) !important;
 }
